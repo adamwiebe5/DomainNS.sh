@@ -15,7 +15,7 @@ IFS=',' read y z <<<"$i"
 currentRecord="$y"
 recordType="$z"
 
-digResult=`dig @"$queryServer" $currentRecord $recordType +short`
+digResult=`dig @"$queryServer" "$currentRecord" "$recordType" +short`
 digResult="${digResult//$'\n'/;}"
 printf "$recordType"',,'"$currentRecord"','"$digResult\n"
 
