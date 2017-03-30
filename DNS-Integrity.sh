@@ -17,7 +17,7 @@ recordType="$z"
 
 digResult=`dig @"$queryServer" "$currentRecord" "$recordType" +short`
 digResult="${digResult//$'\n'/;}"
-printf "$recordType"',,'"$currentRecord"','"$digResult\n"
+echo "$recordType"',,'"$currentRecord"','"$digResult"
 
 done <<< "$fqdnList"
 
